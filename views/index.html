@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <title>API - Users</title>
+</head>
+
+<body>
+    <div class="pagina">
+    <h1>API - USER</h1>
+    <h2>Tecnologias usadas</h2>
+
+<!-------------------POST------------------------------------------------------>
+<h2>routes.post('/user', userController.createUser)</h2>
+
+<p class="a1">Router: Esse objet é usado para definir rotas e manipular as solicitações HTTP para essass rotas</p>
+<p class="a2">Post: É usado para enviar dados para o servidor, muitas vezes para criar novas rotas</p>
+<p class="a3">userController: Função responsavel por processar a solicitação e realizar as ações necessárias</p>
+
+<p class="a4">Essa função é responsavel pela criação de usuario no banco de dados. Usado para enviar dados confidenciais.</p>
+<!-------------------GET------------------------------------------------------>
+<h2>routes.get('/users', userController.findUsers);</h2>
+
+<p class="a5">Get: Usado para recuperar uma informação. Verbo padrão para enviar dados quando submetemos um formulario HTTP</p>
+<p class="a6">Basicamente o get é usado para enviar as informações menos sensiveis </p>
+
+<!-------------------DELETE------------------------------------------------------>
+<h2>routes.delete('/user/:id', userController.deleteUser);</h2>
+
+<p class="a7">Delete: Usado para deletar componentes</p>
+<p class="a8">deleteUser: pega a função do userController, essa funçao especifica é responsavel por deletar</p>
+
+<!-------------------PUT------------------------------------------------------>
+<h2>routes.put('/user/:id', userController.updateUser);</h2>
+
+<p class="a9">Put: É usado para atualizar ou modificar recursos no servidor.</p>
+<p class="a10">Ele basicamente atualiza e faz modificações em informações ja criadas.</p>
+
+<!-------------------POST2------------------------------------------------------>
+
+<h2>routes.post('/user/authenticated', userController.authenticatedUser);</h2>
+
+<p class="a11">POST: É usado para atualizar ou modificar recursos no servidor.</p>
+<p class="a12">'/user/authenticated': A rota será acionada quando uma solicitação POST for feita para a URL com o caminho "/user/authenticated".</p>
+<p class="a13">userController.authenticatedUser: Isso se refere à uma função controlada que será executada quando a rota dor acessada.</p>
+<p class="a14">A função controladora é resposavel por lidar com a logica da rota que se trata da autenticação do user</p>
+
+<!-------------------EXPRESS------------------------------------------------------>
+
+<h2>Express</h2>
+
+<p class="a15">Express: Usamos o express que é uma ferramenta para desenvolvedores que desejam criar aplicativos web e APIs de forma rápida e eficiente.</p>
+<p class="a16">Alguns dos seus principais propositos são:</p>
+<ul>
+    <li class="a17">Desenvolvimento de aplicativos web</li>
+    <li class="a18">Gerenciamento de rotas</li>
+    <li class="a19">Middleware</li>
+    <li class="a20">-_Integração com bancos de dados_-</li>
+</ul>
+<!-------------------POSTGRESS------------------------------------------------------>
+
+<h2>Postgress</h2>
+
+<p class="a21">Postgress: Utilizamos o postgres que é um banco de dados relacional.</p>
+<p class="a22">Ele é usado para armazenar, gerenciar e recuperar dados.</p>
+<p class="a23">Algumas das principais finalidades dele:</p>
+
+<ul>
+    <li class="a24">-_Armazenamento de dados_-</li>
+    <li class="a25">Análise de dados</li>
+    <li class="a26">Segurança e conformidade</li>
+</ul>
+<!-------------------NODEMON------------------------------------------------------>
+
+<h2>Nodemon</h2>
+
+<p class="a27">Nodemon: Ele é uma biblioteca que ajuda no desenvolvimento de sistemas que usam o node.js reiniciando automaticamente o servidor.</p>
+<p class="a28">Algumas das suas principais funções são:</p>
+
+<ul>
+    <li class="a29">Reinicialização automática do servidor</li>
+    <li class="a30">Recarregamento automático de aplicativos</li>
+    <li class="a31">Facilita o desenvolvimento em tempo real</li>
+</ul>
+<!-------------------SQLCLI------------------------------------------------------>
+
+<h2>SQL-Client</h2>
+
+<p class="a32">SQL-Client: É uma ferramenta que permite que o client se conecte a um banco de dados e interaja com ele</p>
+<p class="a33">Sua principal finalidade é facilitar a administração, consultoria e manipulação dos dados armazenados no banco</p>
+<p class="a34">Algumas de suas principais caracteristicas são:</p>
+
+<ul>
+    <li class="a35">-_Consulta de dados_-</li>
+    <li class="a36">-_Inserção, atualização e exclusão de dados_-</li>
+    <li class="a37">-_Gerenciamento de bancos de dados_-</li>
+</ul>
+
+
+<!-------------------SQL------------------------------------------------------>
+<h2>Sequelize</h2>
+
+<p class="a38">Sequelize: Se trata de uma biblioteca de mapeamento objeto-nacional (ORM)</p>
+<p class="a39">Permite que os desenvolvedores manipulem dados usando objetos JavaScript em vez de escrever consultas SQL diretamente.</p>
+<p class="a40">Algumas das suas principais funções:</p>
+
+<ul>
+    <li class="a41">Abstração de Banco de Dados</li>
+    <li class="a42">Migrations</li>
+    <li class="a43">Consultas</li>
+    <li class="a44">Relacionamentos</li>
+    <li class="a45">Validação de Dados</li>
+</ul>
+
+
+
+</div>
+<style>
+.pagina{
+position: relative;
+height: 132rem;
+width: 650px;
+margin: auto;
+padding: 60px 60px;
+background-color: rgb(95, 95, 95); 
+background-size: cover;
+box-shadow: 0px 30px 60px -5px #000;
+border-radius: 10px;
+}
+
+.a1:hover{
+color: aliceblue;
+}
+
+.a2:hover{
+color: aliceblue;
+}
+
+.a3:hover{
+color: aliceblue;
+}
+
+.a4:hover{
+color: aliceblue;
+}
+.a5:hover{
+color: aliceblue;
+}
+.a6:hover{
+color: aliceblue;
+}
+.a7:hover{
+color: aliceblue;
+}
+.a8:hover{
+color: aliceblue;
+}
+.a9:hover{
+color: aliceblue;
+}
+.a10:hover{
+color: aliceblue;
+}
+.a11:hover{
+color: aliceblue;
+}
+.a12:hover{
+color: aliceblue;
+}
+.a13:hover{
+color: aliceblue;
+}
+.a14:hover{
+color: aliceblue;
+}
+.a15:hover{
+color: aliceblue;
+}
+.a16:hover{
+color: aliceblue;
+}
+.a17:hover{
+color: aliceblue;
+}
+.a18:hover{
+color: aliceblue;
+}
+.a19:hover{
+color: aliceblue;
+}
+.a20:hover{
+color: aliceblue;
+}
+.a21:hover{
+color: aliceblue;
+}
+.a22:hover{
+color: aliceblue;
+}
+.a23:hover{
+color: aliceblue;
+}
+.a24:hover{
+color: aliceblue;
+}
+.a25:hover{
+color: aliceblue;
+}
+.a26:hover{
+color: aliceblue;
+}
+.a27:hover{
+color: aliceblue;
+}
+.a28:hover{
+color: aliceblue;
+}
+.a29:hover{
+color: aliceblue;
+}
+.a30:hover{
+color: aliceblue;
+}
+.a31:hover{
+color: aliceblue;
+}
+.a32:hover{
+color: aliceblue;
+}
+.a33:hover{
+color: aliceblue;
+}
+.a34:hover{
+color: aliceblue;
+}
+.a35:hover{
+color: aliceblue;
+}
+.a36:hover{
+color: aliceblue;
+}
+.a37:hover{
+color: aliceblue;
+}
+.a38:hover{
+color: aliceblue;
+}
+.a39:hover{
+color: aliceblue;
+}
+.a40:hover{
+color: aliceblue;
+}
+.a41:hover{
+color: aliceblue;
+}
+.a42:hover{
+color: aliceblue;
+}
+.a43:hover{
+color: aliceblue;
+}
+.a44:hover{
+color: aliceblue;
+}
+.a45:hover{
+color: aliceblue;
+}
+
+</style>
+</div>
+</body>
+</html>
