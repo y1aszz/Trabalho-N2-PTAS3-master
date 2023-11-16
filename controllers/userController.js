@@ -87,7 +87,8 @@ const authenticatedUser = async (req, res) => {
             process.env.SECRET, {
             expiresIn: 86400,
         })
-        return res.json({
+
+        res.cookie('token', token, { httpOnly: true }).json({
             name: isUserAuthenticated.name,
             email: isUserAuthenticated.email,
             token: token
