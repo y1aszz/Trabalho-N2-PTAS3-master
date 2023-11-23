@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require("bcrypt")
-//require('dotenv').config();
+require('dotenv').config();
 
 
 const createUser = async (req, res) => {
@@ -47,11 +47,12 @@ const deleteUser = async (req, res) => {
 const updateUser = async (req, res) => {
     const id = parseInt(req.params.id);
     const { name, password, email } = req.body;
+    const newPassword = await bcrypt.hash(password, 10);
     try {
         await User.update(
             {
                 name: name,
-                password: password,
+                password: newPassword,
                 email: email
             },
             {
@@ -93,9 +94,7 @@ const authenticatedUser = async (req, res) => {
             email: isUserAuthenticated.email,
             token: token
         });
-    }
-
-    else{
+    } else{
         return res.json("usuário não encontrado")
     }
  } catch (error) {

@@ -15,22 +15,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 
-const routes = require('./routers/routes');
-
 app.use(
     expressJWT({
         secret: process.env.SECRET,
         algorithms: ["HS256"],
-        getToken: req => req.cookies.token
+        getToken: req => req.cookies.token,
     }).unless({
         path: ["/user/authenticated", "/"]
     })
 );
 
-app.use(express.json(), routes, cors());
 app.listen(port, () => { console.log(`Run server...${port}`) });
 
 
+const routes = require('./routers/routes');
+app.use(express.json(), routes, cors());
 
 app.get('/', (req, res) => {
     const filePath = path.join(__dirname, 'views', 'index.html');
